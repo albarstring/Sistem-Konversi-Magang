@@ -1,0 +1,81 @@
+<script setup>
+import { GraduationCap } from "lucide-vue-next";
+</script>
+
+<template>
+  <nav class="fixed top-5 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div
+        class="rounded-2xl border border-gray-200 bg-white/90 shadow-lg backdrop-blur-md"
+      >
+        <div class="flex items-center h-16 px-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+            >
+              <GraduationCap class="w-6 h-6 text-white" />
+            </div>
+
+            <div>
+              <h1 class="font-bold text-lg text-gray-900">Sistem Magang</h1>
+              <p class="text-xs text-gray-600">Universitas Amikom Yogyakarta</p>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-8 ml-12">
+            <a
+              href="#beranda"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Beranda
+            </a>
+
+            <a
+              href="#tentang"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Tentang
+            </a>
+
+            <a
+              href="#fitur"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Fitur
+            </a>
+
+            <a
+              href="#kontak"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Kontak
+            </a>
+
+            <a
+              href="#kontak"
+              class="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Team
+            </a>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-3 ml-auto">
+            <button
+              @click="onLoginClick"
+              class="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              Login
+            </button>
+
+            <button
+              @click="onLoginClick"
+              class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
