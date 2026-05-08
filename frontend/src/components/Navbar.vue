@@ -17,7 +17,7 @@ import { GraduationCap } from "lucide-vue-next";
             </div>
 
             <div>
-              <h1 class="font-bold text-lg text-gray-900">Sistem Magang</h1>
+              <h1 class="font-bold text-lg text-gray-900">Lowongan Magang</h1>
               <p class="text-xs text-gray-600">Universitas Amikom Yogyakarta</p>
             </div>
           </div>
@@ -34,21 +34,21 @@ import { GraduationCap } from "lucide-vue-next";
               href="#tentang"
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
-              Tentang
+              Lowongan
             </a>
 
             <a
               href="#fitur"
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
-              Fitur
+              Perusahaan
             </a>
 
             <a
               href="#kontak"
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
-              Kontak
+              Panduan
             </a>
 
             <a
