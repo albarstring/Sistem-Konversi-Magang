@@ -1,10 +1,37 @@
 <script setup>
-import { GraduationCap } from "lucide-vue-next";
+import { GraduationCap } from 'lucide-vue-next'
+
+const props = defineProps({
+  currentPage: {
+    type: String,
+    default: 'home',
+  },
+  onLoginClick: {
+    type: Function,
+    default: () => {},
+  },
+  onNavigate: {
+    type: Function,
+    default: () => {},
+  },
+})
+
+const goToHome = () => {
+  props.onNavigate('home')
+}
+
+const goToLowongan = () => {
+  props.onNavigate('lowongan')
+}
+
+const goToPerusahaan = () => {
+  props.onNavigate('perusahaan')
+}
 </script>
 
 <template>
   <nav class="fixed top-5 w-full z-50">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-10">
       <div
         class="rounded-2xl border border-gray-200 bg-white/90 shadow-lg backdrop-blur-md"
       >
@@ -23,52 +50,41 @@ import { GraduationCap } from "lucide-vue-next";
           </div>
 
           <div class="hidden md:flex items-center space-x-8 ml-12">
-            <a
-              href="#beranda"
+            <button
+              type="button"
+              @click="goToHome"
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Beranda
-            </a>
+            </button>
 
-            <a
-              href="#tentang"
+            <button
+              type="button"
+              @click="goToLowongan"
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Lowongan
-            </a>
+            </button>
 
-            <a
-              href="#fitur"
+            <button
+              type="button"
+              @click="goToPerusahaan"
               class="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Perusahaan
-            </a>
-
-            <a
-              href="#kontak"
-              class="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Panduan
-            </a>
-
-            <a
-              href="#kontak"
-              class="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Team
-            </a>
+            </button>
           </div>
 
           <div class="hidden md:flex items-center space-x-3 ml-auto">
             <button
-              @click="onLoginClick"
+              @click="props.onLoginClick"
               class="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
             >
               Login
             </button>
 
             <button
-              @click="onLoginClick"
+              @click="props.onLoginClick"
               class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               Register
