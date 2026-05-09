@@ -26,114 +26,58 @@ const doSearch = () => {
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section
-      id="beranda"
-      class="bg-[#008BFF] py-12 pt-36 pb-20"
-    >
-      <div class="max-w-7xl mx-auto px-10">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="text-4xl font-bold text-white mb-6">
-              Kelola Magang Mahasiswa dengan Mudah
-            </h1>
-            <p class="text-lg text-white mb-8">
-              Platform terintegrasi untuk mengelola seluruh proses magang, dari
-              pencarian lowongan hingga pelaporan dan evaluasi.
-            </p>
-            <label
-              class="relative flex w-full max-w-2xl flex-col gap-2 rounded-2xl border bg-white p-2 shadow-2xl md:flex-row md:items-center"
-              for="search-bar"
-            >
+    id="beranda"
+    class="bg-[#008BFF] pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden"
+  >
+    <div class="max-w-7xl mx-auto px-10">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        
+        <div class="text-center md:text-left">
+          <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Kelola Magang Mahasiswa dengan Mudah
+          </h1>
+          <p class="text-base md:text-lg text-blue-50 mb-8 opacity-90">
+            Platform terintegrasi untuk mengelola seluruh proses magang, dari
+            pencarian lowongan hingga pelaporan dan evaluasi.
+          </p>
+
+          <div class="w-full max-w-2xl mx-auto md:mx-0">
+            <div class="flex flex-col md:flex-row gap-3 bg-white p-2 rounded-2xl shadow-xl">
               <input
                 id="search-bar"
                 v-model="searchQuery"
-                placeholder="Cari posisi, perusahaan, atau kata kunci..."
-                class="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white"
+                type="text"
+                placeholder="Cari posisi atau perusahaan..."
+                class="flex-1 px-4 py-3 rounded-xl outline-none text-gray-700 bg-gray-50 md:bg-transparent"
               />
               <button
                 type="button"
                 @click="doSearch"
-                class="w-full md:w-auto px-6 py-3 bg-blue-600 border-blue-600 text-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all disabled:opacity-70"
+                class="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all active:scale-95 flex items-center justify-center"
               >
-                <div class="relative">
-                  <div
-                    class="flex items-center justify-center h-3 w-3 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 transition-all"
-                  >
-                    <svg
-                      class="opacity-0 animate-spin w-full h-full"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        class="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        stroke-width="4"
-                      ></circle>
-                      <path
-                        class="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                  </div>
-
-                  <div class="flex items-center transition-all valid:">
-                    <button class="text-sm font-semibold whitespace-nowrap text-white truncate mx-auto">
-                      Search
-                    </button>
-                  </div>
-                </div>
+                Search
               </button>
-            </label>
-          </div>
-          <div class="hidden md:block">
-            <div class="bg-white rounded-2xl shadow-2xl p-8">
-              <div class="space-y-6">
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
-                  >
-                    <Users class="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <p class="text-2xl font-bold text-gray-900">150+</p>
-                    <p class="text-gray-600">Mahasiswa Magang</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center"
-                  >
-                    <Building class="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p class="text-2xl font-bold text-gray-900">50+</p>
-                    <p class="text-gray-600">Perusahaan Mitra</p>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                  <div
-                    class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center"
-                  >
-                    <Briefcase class="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <p class="text-2xl font-bold text-gray-900">80+</p>
-                    <p class="text-gray-600">Lowongan Tersedia</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
+
+        <div class="hidden md:flex justify-center items-center">
+          <div class="relative w-full max-w-sm">
+            <div class="absolute -inset-4 bg-white/10 rounded-full blur-3xl"></div>
+            <img 
+              src="/people1.webp" 
+              alt="Ilustrasi Magang" 
+              class="relative w-full h-auto rounded-2xl shadow-2xl object-cover" 
+            />
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- About Section -->
-    <section id="tentang" class="py-20">
+    <section  class="py-20">
       <div class="max-w-7xl mx-auto px-10">
         <div class="text-center mb-16">
           <h2 class="text-2xl font-bold text-gray-900 mb-4">

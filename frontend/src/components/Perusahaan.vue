@@ -143,23 +143,23 @@ const openDetail = (company) => {
 <template>
   <div class="min-h-screen bg-gray-50">
     <div class="bg-[#008BFF] pt-36 py-12 pb-12 pt-36 text-white">
-      <div class="mx-auto max-w-7xl px-4">
+      <div class="mx-auto max-w-7xl px-4 lg:px-10">
         <h1 class="mb-4 text-4xl font-bold">Perusahaan Mitra</h1>
         <p class="text-xl opacity-90">Temukan perusahaan terbaik untuk pengalaman magang Anda</p>
-        <div class="mt-6 inline-flex items-center space-x-2 rounded-lg bg-white/10 px-4 py-3 backdrop-blur-sm">
+        <div class="mt-6 inline-flex items-center space-x-2 rounded-lg bg-white/10 px-4 lg:px-10 lg:px-10 py-3 backdrop-blur-sm">
           <Building class="h-5 w-5" />
           <span class="font-medium">{{ companies.length }} Perusahaan Mitra</span>
         </div>
       </div>
     </div>
 
-    <div class="mx-auto max-w-7xl px-4 py-8">
+    <div class="mx-auto max-w-7xl px-4 lg:px-10 py-8">
       <div class="mb-8 rounded-lg bg-white p-6 shadow-lg">
         <div class="flex flex-wrap items-center gap-4">
           <label class="font-medium text-gray-700">Filter Kategori:</label>
           <select
             v-model="selectedCategory"
-            class="rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-purple-500"
+            class="rounded-lg border border-gray-300 px-4 lg:px-10 py-2 focus:border-transparent focus:ring-2 focus:ring-purple-500"
           >
             <option value="all">Semua Kategori</option>
             <option v-for="cat in categories.slice(1)" :key="cat" :value="cat">

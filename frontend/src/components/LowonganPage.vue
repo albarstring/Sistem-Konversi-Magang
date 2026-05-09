@@ -225,11 +225,11 @@ const openDetail = (item) => {
 <template>
   <div class="min-h-screen bg-gray-50">
     <div class="bg-[#008BFF] pt-36 py-12 text-white">
-      <div class="mx-auto max-w-7xl px-4 lg:px-10 text-center md:text-left">
-        <h1 class="mb-4 text-4xl font-bold">Lowongan Magang</h1>
+      <div class="mx-auto max-w-7xl px-4 lg:px-10 text-center md:text-center">
+        <h1 class="mb-4 text-4xl font-bold">Temukan Lowongan Magang Impianmu</h1>
 
-        <p class="text-xl opacity-90">
-          Temukan pengalaman magang terbaik untuk karirmu
+        <p class="text-lg opacity-90">
+          Jelajahi berbagai lowongan magang yang sesuai dengan minat dan keahlianmu.
         </p>
 
         <div
@@ -353,9 +353,9 @@ const openDetail = (item) => {
 
       <div v-if="filteredLowongan.length === 0" class="py-12 text-center">
         <Briefcase class="mx-auto mb-4 h-16 w-16 text-gray-400" />
-        <h3 class="mb-2 text-xl font-semibold text-gray-900">
+        <p class="mb-2 text-lg font-semibold text-gray-900">
           Tidak ada lowongan ditemukan
-        </h3>
+        </p>
         <p class="text-gray-600">Coba ubah filter atau kata kunci pencarian</p>
       </div>
     </div>

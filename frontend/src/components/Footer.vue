@@ -4,7 +4,7 @@ import { GraduationCap } from 'lucide-vue-next'
 
 <template>
   <footer class="bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4 lg:px-10">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
           <div class="flex items-center space-x-3 mb-4">
