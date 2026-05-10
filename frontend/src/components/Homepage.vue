@@ -26,55 +26,56 @@ const doSearch = () => {
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section
-    id="beranda"
-    class="bg-[#008BFF] pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden"
-  >
-    <div class="max-w-7xl mx-auto px-10">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        
-        <div class="text-center md:text-left">
-          <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Kelola Magang Mahasiswa dengan Mudah
-          </h1>
-          <p class="text-base md:text-lg text-blue-50 mb-8 opacity-90">
-            Platform terintegrasi untuk mengelola seluruh proses magang, dari
-            pencarian lowongan hingga pelaporan dan evaluasi.
-          </p>
+  id="beranda"
+  class="bg-[#008BFF] pt-7 pb-0 text-white overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto px-4 lg:px-10">
+    <div class="grid md:grid-cols-2 items-end">
 
-          <div class="w-full max-w-2xl mx-auto md:mx-0">
-            <div class="flex flex-col md:flex-row gap-3 bg-white p-2 rounded-2xl shadow-xl">
-              <input
-                id="search-bar"
-                v-model="searchQuery"
-                type="text"
-                placeholder="Cari posisi atau perusahaan..."
-                class="flex-1 px-4 py-3 rounded-xl outline-none text-gray-700 bg-gray-50 md:bg-transparent"
-              />
-              <button
-                type="button"
-                @click="doSearch"
-                class="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all active:scale-95 flex items-center justify-center"
-              >
-                Search
-              </button>
-            </div>
-          </div>
-        </div>
+      <!-- LEFT -->
+      <div class="pb-12 text-center md:text-left">
+        <h1 class="mb-4 text-3xl font-bold leading-tight">
+          Kelola Magang Mahasiswa dengan Mudah
+        </h1>
 
-        <div class="hidden md:flex justify-center items-center">
-          <div class="relative w-full max-w-sm">
-            <div class="absolute -inset-4 bg-white/10 rounded-full blur-3xl"></div>
-            <img 
-              src="/people1.webp" 
-              alt="Ilustrasi Magang" 
-              class="relative w-full h-auto rounded-2xl shadow-2xl object-cover" 
+        <p class="text-lg text-blue-50 opacity-90">
+          Platform terintegrasi untuk mengelola seluruh proses magang, dari
+          pencarian lowongan hingga pelaporan dan evaluasi.
+        </p>
+
+        <div class="w-full max-w-2xl mx-auto md:mx-0 mt-6">
+          <div class="flex flex-col md:flex-row gap-3 bg-white p-2 rounded-2xl shadow-xl">
+            <input
+              id="search-bar"
+              v-model="searchQuery"
+              type="text"
+              placeholder="Cari posisi atau perusahaan..."
+              class="flex-1 px-4 py-3 rounded-xl outline-none text-gray-700 bg-gray-50 md:bg-transparent"
             />
+
+            <button
+              type="button"
+              @click="doSearch"
+              class="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all active:scale-95 flex items-center justify-center"
+            >
+              Cari
+            </button>
           </div>
         </div>
-
       </div>
+
+      <!-- RIGHT -->
+      <div class="hidden md:flex justify-end items-end">
+        <img
+          src="/people2.webp"
+          alt="Ilustrasi Magang"
+          class="w-[320px] translate-y-[2px]"
+        />
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
     <!-- About Section -->
     <section  class="py-20">
@@ -150,7 +151,7 @@ const doSearch = () => {
 
     <!-- Features Section -->
     <section id="fitur" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-10">
+      <div class="mx-auto max-w-7xl px-4 lg:px-10">
         <div class="text-center mb-16">
           <h2 class="text-2xl font-bold text-gray-900 mb-4">Fitur Unggulan</h2>
           <p class="text-lg text-gray-600">

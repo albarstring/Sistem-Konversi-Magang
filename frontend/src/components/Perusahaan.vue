@@ -20,7 +20,8 @@ const props = defineProps({
 })
 
 const selectedCompany = ref(null)
-const selectedCategory = ref('all')
+const selectedProvince = ref('all')
+const companyQuery = ref('')
 
 const companies = [
   {
@@ -121,14 +122,17 @@ const companies = [
   },
 ]
 
-const categories = ['all', 'Technology', 'Design', 'Data Science', 'Marketing']
+const provinces = ['all', 'Yogyakarta', 'Jakarta', 'Bandung', 'Semarang']
 
 const filteredCompanies = computed(() => {
-  if (selectedCategory.value === 'all') {
-    return companies
-  }
+  const companyKeyword = companyQuery.value.trim().toLowerCase()
 
-  return companies.filter((item) => item.category === selectedCategory.value)
+  return companies.filter((item) => {
+    const matchProvince = selectedProvince.value === 'all' || item.location === selectedProvince.value
+    const matchCompany = companyKeyword.length === 0 || item.name.toLowerCase().includes(companyKeyword)
+
+    return matchProvince && matchCompany
+  })
 })
 
 const closeDetail = () => {
@@ -142,30 +146,70 @@ const openDetail = (company) => {
 
 <template>
   <div class="min-h-screen bg-gray-50">
-    <div class="bg-[#008BFF] pt-36 py-12 pb-12 pt-36 text-white">
-      <div class="mx-auto max-w-7xl px-4 lg:px-10">
-        <h1 class="mb-4 text-4xl font-bold">Perusahaan Mitra</h1>
-        <p class="text-xl opacity-90">Temukan perusahaan terbaik untuk pengalaman magang Anda</p>
-        <div class="mt-6 inline-flex items-center space-x-2 rounded-lg bg-white/10 px-4 lg:px-10 lg:px-10 py-3 backdrop-blur-sm">
-          <Building class="h-5 w-5" />
-          <span class="font-medium">{{ companies.length }} Perusahaan Mitra</span>
-        </div>
-      </div>
+   <div class="bg-[#008BFF] pt-7 pb-0 text-white overflow-hidden">
+  <div
+    class="mx-auto max-w-7xl px-4 lg:px-10 grid grid-cols-1 md:grid-cols-2 items-end"
+  >
+    
+    <!-- LEFT -->
+    <div class="pb-12 text-center md:text-left">
+      <h1 class="mb-4 text-3xl font-bold">
+        Perusahaan Penyelenggara Magang
+      </h1>
+
+      <p class="text-lg opacity-90">
+        Buka peluang bagi talenta masa depan. Daftarkan perusahaan Anda di Maganghub dan temukan kandidat magang yang tepat secara gratis.
+      </p>
+
+      <button
+        type="button"
+        @click="props.onLoginClick"
+        class="mt-6 inline-flex items-center space-x-2 rounded-lg bg-white px-4 py-3 font-medium text-[#008BFF] transition-colors hover:bg-blue-50"
+      >
+        <Building class="h-5 w-5" />
+        <span>Daftar Sekarang</span>
+      </button>
     </div>
 
+    <!-- RIGHT -->
+    <div class="hidden md:flex justify-end items-end">
+      <img
+        src="/people1.webp"
+        alt="People"
+        class="w-[320px] translate-y-[2px]"
+      />
+    </div>
+
+  </div>
+</div>
+
     <div class="mx-auto max-w-7xl px-4 lg:px-10 py-8">
+      <h1 class="mb-4 text-xl font-medium text-gray-500">Daftar Perusahaan Penyelenggara Magang</h1>
+
       <div class="mb-8 rounded-lg bg-white p-6 shadow-lg">
-        <div class="flex flex-wrap items-center gap-4">
-          <label class="font-medium text-gray-700">Filter Kategori:</label>
-          <select
-            v-model="selectedCategory"
-            class="rounded-lg border border-gray-300 px-4 lg:px-10 py-2 focus:border-transparent focus:ring-2 focus:ring-purple-500"
-          >
-            <option value="all">Semua Kategori</option>
-            <option v-for="cat in categories.slice(1)" :key="cat" :value="cat">
-              {{ cat }}
-            </option>
-          </select>
+        <div class="grid gap-4 md:grid-cols-2 lg:items-end">
+          <div>
+            <label class="mb-2 block font-medium text-gray-700">Cari Provinsi</label>
+            <select
+              v-model="selectedProvince"
+              class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-purple-500">
+              <option value="all">Semua Provinsi</option>
+              <option v-for="province in provinces.slice(1)" :key="province" :value="province">
+                {{ province }}
+              </option>
+            </select>
+          </div>
+          <div>
+            <label class="mb-2 block font-medium text-gray-700">Cari Perusahaan</label>
+            <input
+              v-model="companyQuery"
+              type="text"
+              placeholder="Contoh: Tech Indonesia"
+              class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+        </div>
+        <div class="mt-4">
           <span class="text-gray-600">{{ filteredCompanies.length }} perusahaan ditemukan</span>
         </div>
       </div>
@@ -224,6 +268,70 @@ const openDetail = (company) => {
           </div>
         </article>
       </div>
+
+      <nav aria-label="Pagination" class="mt-8 flex justify-center space-x-4">
+        <a
+          href="#"
+          aria-disabled="true"
+          tabindex="-1"
+          aria-label="Previous page"
+          class="flex h-9 w-9 shrink-0 cursor-default items-center justify-center rounded-full border border-slate-300 bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-3 rotate-180 overflow-visible fill-slate-400"
+            viewBox="0 0 451.846 451.847"
+            aria-hidden="true"
+          >
+            <path
+              d="M345.441 248.292 151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
+              data-original="#000000"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-current="page"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-blue-600 bg-blue-600 text-sm font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          1
+        </a>
+        <a
+          href="#"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-900 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          2
+        </a>
+        <a
+          href="#"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-900 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          3
+        </a>
+        <a
+          href="#"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-900 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          4
+        </a>
+        <a
+          href="#"
+          aria-label="Next page"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-gray-200 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-3 overflow-visible fill-slate-600"
+            viewBox="0 0 451.846 451.847"
+            aria-hidden="true"
+          >
+            <path
+              d="M345.441 248.292 151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
+              data-original="#000000"
+            />
+          </svg>
+        </a>
+      </nav>
     </div>
 
     <div

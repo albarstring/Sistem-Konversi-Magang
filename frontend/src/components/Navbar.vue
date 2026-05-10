@@ -53,7 +53,7 @@ const goToPerusahaan = () => {
             <button
               type="button"
               @click="goToHome"
-              class="text-gray-700 hover:text-blue-600 transition-colors"
+              class="text-gray-700 font-medium hover:text-blue-600 transition-colors"
             >
               Beranda
             </button>
@@ -61,7 +61,7 @@ const goToPerusahaan = () => {
             <button
               type="button"
               @click="goToLowongan"
-              class="text-gray-700 hover:text-blue-600 transition-colors"
+              class="text-gray-700 font-medium hover:text-blue-600 transition-colors"
             >
               Lowongan
             </button>
@@ -69,7 +69,7 @@ const goToPerusahaan = () => {
             <button
               type="button"
               @click="goToPerusahaan"
-              class="text-gray-700 hover:text-blue-600 transition-colors"
+              class="text-gray-700 font-medium hover:text-blue-600 transition-colors"
             >
               Perusahaan
             </button>

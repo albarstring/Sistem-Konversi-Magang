@@ -358,6 +358,70 @@ const openDetail = (item) => {
         </p>
         <p class="text-gray-600">Coba ubah filter atau kata kunci pencarian</p>
       </div>
+
+      <nav aria-label="Pagination" class="mt-8 flex justify-center space-x-4">
+        <a
+          href="#"
+          aria-disabled="true"
+          tabindex="-1"
+          aria-label="Previous page"
+          class="flex h-9 w-9 shrink-0 cursor-default items-center justify-center rounded-full border border-slate-300 bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-3 rotate-180 overflow-visible fill-slate-400"
+            viewBox="0 0 451.846 451.847"
+            aria-hidden="true"
+          >
+            <path
+              d="M345.441 248.292 151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
+              data-original="#000000"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-current="page"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-blue-600 bg-blue-600 text-sm font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          1
+        </a>
+        <a
+          href="#"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-900 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          2
+        </a>
+        <a
+          href="#"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-900 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          3
+        </a>
+        <a
+          href="#"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-900 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          4
+        </a>
+        <a
+          href="#"
+          aria-label="Next page"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-gray-200 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-3 overflow-visible fill-slate-600"
+            viewBox="0 0 451.846 451.847"
+            aria-hidden="true"
+          >
+            <path
+              d="M345.441 248.292 151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373"
+              data-original="#000000"
+            />
+          </svg>
+        </a>
+      </nav>
     </div>
 
     <div
